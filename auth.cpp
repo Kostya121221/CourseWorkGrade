@@ -8,7 +8,6 @@
 
 namespace {
 std::uint64_t hashPassword(const std::string& text, std::uint64_t salt) {
-    // FNV-1a с солью для учебного примера; не предназначен для защиты реальных учетных записей.
     std::uint64_t h=14695981039346656037ULL ^ salt;
     for(unsigned char c:text){h^=c;h*=1099511628211ULL;}
     return h;
